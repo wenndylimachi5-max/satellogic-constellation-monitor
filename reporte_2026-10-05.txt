@@ -1,0 +1,80 @@
+REPORTE DIARIO - CONSTELACIÓN SATELLOGIC
+Generado: 2026-10-05 00:32 UTC
+Satélites analizados: 18
+
+ALERTAS (altitud media < 400 km):
+  ⚠ NUSAT-37: 364.7 km
+  ⚠ NUSAT-38: 399.1 km
+
+ALTITUD MEDIA (de menor a mayor):
+  NUSAT-37    364.7 km
+  NUSAT-38    399.1 km
+  NUSAT-39    410.7 km
+  NUSAT-42    417.8 km
+  NUSAT-26    428.6 km
+  NUSAT-35    453.3 km
+  NUSAT-41    474.0 km
+  NUSAT-49    475.2 km
+  NUSAT-45    475.3 km
+  NUSAT-48    475.5 km
+  NUSAT-44    475.7 km
+  NUSAT-50    475.8 km
+  NUSAT-33    477.5 km
+  NUSAT-51    501.8 km
+  NUSAT-47    501.9 km
+  NUSAT-52    503.9 km
+  NUSAT-53    507.5 km
+  NUSAT-54    509.9 km
+
+PASADAS SOBRE BUENOS AIRES (próximas 24 h): 51
+  04/10 21:42 (hora AR) | NUSAT-35 (WILLIAMINA)        | Elev máx  35.5° |  6.4 min
+  04/10 22:01 (hora AR) | NUSAT-33 (ALBANIA-2)         | Elev máx  21.6° |  5.6 min
+  04/10 22:30 (hora AR) | NUSAT-52                     | Elev máx  11.2° |  2.4 min
+  04/10 23:16 (hora AR) | NUSAT-51 (YVONNE BRILL)      | Elev máx  47.4° |  7.2 min
+  04/10 23:17 (hora AR) | NUSAT-35 (WILLIAMINA)        | Elev máx  10.1° |  0.5 min
+  04/10 23:24 (hora AR) | NUSAT-47                     | Elev máx  62.9° |  7.4 min
+  04/10 23:34 (hora AR) | NUSAT-33 (ALBANIA-2)         | Elev máx  17.3° |  4.8 min
+  04/10 23:52 (hora AR) | NUSAT-37 (JOAN CLARKE)       | Elev máx  45.0° |  5.6 min
+  04/10 23:52 (hora AR) | NUSAT-45 (UZMASAT-1)         | Elev máx  51.3° |  7.0 min
+  05/10 00:02 (hora AR) | NUSAT-49 (KLARA DAN VO*)     | Elev máx  70.0° |  7.1 min
+  05/10 00:02 (hora AR) | NUSAT-52                     | Elev máx  35.6° |  6.9 min
+  05/10 00:16 (hora AR) | NUSAT-39 (TIKVAH ALPER)      | Elev máx  76.6° |  6.5 min
+  05/10 00:17 (hora AR) | NUSAT-38 (MARIA AGNESI)      | Elev máx  85.6° |  6.4 min
+  05/10 00:18 (hora AR) | NUSAT-50 (NANCY ROMAN)       | Elev máx  66.2° |  7.1 min
+  05/10 00:22 (hora AR) | NUSAT-26 (M SOMERVILLE)      | Elev máx  40.6° |  6.3 min
+  05/10 00:35 (hora AR) | NUSAT-48 (HENRIETTA LE*)     | Elev máx  38.0° |  6.7 min
+  05/10 02:11 (hora AR) | NUSAT-54 (BRANCA MARQU*)     | Elev máx  12.9° |  3.5 min
+  05/10 02:53 (hora AR) | NUSAT-53 (JANE GOODALL)      | Elev máx  44.3° |  7.2 min
+  05/10 03:39 (hora AR) | NUSAT-44 (MARIA MITCHE*)     | Elev máx  25.1° |  6.0 min
+  05/10 03:43 (hora AR) | NUSAT-54 (BRANCA MARQU*)     | Elev máx  34.4° |  7.0 min
+  05/10 04:24 (hora AR) | NUSAT-41 (C PAYNE-G)         | Elev máx  42.1° |  6.8 min
+  05/10 05:09 (hora AR) | NUSAT-42 (M WONENBURGER)     | Elev máx  36.1° |  6.1 min
+  05/10 05:13 (hora AR) | NUSAT-44 (MARIA MITCHE*)     | Elev máx  15.3° |  4.3 min
+  05/10 09:42 (hora AR) | NUSAT-35 (WILLIAMINA)        | Elev máx  51.9° |  6.8 min
+  05/10 09:53 (hora AR) | NUSAT-51 (YVONNE BRILL)      | Elev máx  13.1° |  3.6 min
+  05/10 10:00 (hora AR) | NUSAT-47                     | Elev máx  16.4° |  4.8 min
+  05/10 10:04 (hora AR) | NUSAT-33 (ALBANIA-2)         | Elev máx  83.2° |  7.3 min
+  05/10 10:25 (hora AR) | NUSAT-45 (UZMASAT-1)         | Elev máx  11.9° |  2.8 min
+  05/10 10:34 (hora AR) | NUSAT-49 (KLARA DAN VO*)     | Elev máx  15.1° |  4.3 min
+  05/10 10:37 (hora AR) | NUSAT-52                     | Elev máx  51.5° |  7.3 min
+  05/10 10:47 (hora AR) | NUSAT-26 (M SOMERVILLE)      | Elev máx  24.8° |  5.5 min
+  05/10 10:50 (hora AR) | NUSAT-50 (NANCY ROMAN)       | Elev máx  23.9° |  5.9 min
+  05/10 11:06 (hora AR) | NUSAT-48 (HENRIETTA LE*)     | Elev máx  38.7° |  6.7 min
+  05/10 11:25 (hora AR) | NUSAT-51 (YVONNE BRILL)      | Elev máx  32.4° |  6.8 min
+  05/10 11:33 (hora AR) | NUSAT-47                     | Elev máx  25.5° |  6.3 min
+  05/10 11:56 (hora AR) | NUSAT-45 (UZMASAT-1)         | Elev máx  32.5° |  6.5 min
+  05/10 12:06 (hora AR) | NUSAT-49 (KLARA DAN VO*)     | Elev máx  24.9° |  6.0 min
+  05/10 12:20 (hora AR) | NUSAT-26 (M SOMERVILLE)      | Elev máx  11.9° |  2.7 min
+  05/10 12:24 (hora AR) | NUSAT-50 (NANCY ROMAN)       | Elev máx  15.4° |  4.4 min
+  05/10 12:35 (hora AR) | NUSAT-37 (JOAN CLARKE)       | Elev máx  52.0° |  5.8 min
+  05/10 13:07 (hora AR) | NUSAT-38 (MARIA AGNESI)      | Elev máx  58.9° |  6.2 min
+  05/10 13:07 (hora AR) | NUSAT-39 (TIKVAH ALPER)      | Elev máx  49.0° |  6.2 min
+  05/10 14:54 (hora AR) | NUSAT-41 (C PAYNE-G)         | Elev máx  35.7° |  6.6 min
+  05/10 15:17 (hora AR) | NUSAT-54 (BRANCA MARQU*)     | Elev máx  26.0° |  6.4 min
+  05/10 15:32 (hora AR) | NUSAT-42 (M WONENBURGER)     | Elev máx  26.9° |  5.6 min
+  05/10 15:42 (hora AR) | NUSAT-44 (MARIA MITCHE*)     | Elev máx  67.1° |  7.1 min
+  05/10 16:01 (hora AR) | NUSAT-53 (JANE GOODALL)      | Elev máx  76.7° |  7.5 min
+  05/10 16:31 (hora AR) | NUSAT-41 (C PAYNE-G)         | Elev máx  10.0° |  0.3 min
+  05/10 16:51 (hora AR) | NUSAT-54 (BRANCA MARQU*)     | Elev máx  16.5° |  4.9 min
+  05/10 17:06 (hora AR) | NUSAT-42 (M WONENBURGER)     | Elev máx  10.4° |  1.3 min
+  05/10 21:10 (hora AR) | NUSAT-35 (WILLIAMINA)        | Elev máx  12.2° |  3.0 min
