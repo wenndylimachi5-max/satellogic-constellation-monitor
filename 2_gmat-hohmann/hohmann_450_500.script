@@ -1,0 +1,114 @@
+%==========================================================
+% PROYECTO GMAT - PARTE 1: Transferencia Hohmann 450 -> 500 km
+% Autora: Wenndy Paola Limachi Zabala - UTN FRH
+% Orbita heliosincronica tipo Satellogic (i = 97.2 deg)
+%==========================================================
+
+%----------------------------------------------------------
+% 1) SATELITE: estado inicial (orbita circular a 450 km)
+%----------------------------------------------------------
+Create Spacecraft Sat;
+Sat.DateFormat = UTCGregorian;              % fechas en UTC
+Sat.Epoch = '05 Oct 2026 00:00:00.000';     % instante inicial
+Sat.CoordinateSystem = EarthMJ2000Eq;       % sistema inercial centrado en la Tierra
+Sat.DisplayStateType = Keplerian;           % defino la orbita con elementos keplerianos
+Sat.SMA = 6828.137;                         % semieje mayor [km] = 6378.137 + 450
+Sat.ECC = 0;                                % excentricidad 0 = circular
+Sat.INC = 97.2;                             % inclinacion [deg] (heliosincronica)
+Sat.RAAN = 0;                               % nodo ascendente [deg]
+Sat.AOP = 0;                                % argumento del perigeo [deg]
+Sat.TA = 0;                                 % anomalia verdadera [deg]
+Sat.DryMass = 100;                          % masa [kg] (orden de un NuSat)
+
+%----------------------------------------------------------
+% 2) MODELO DE FUERZAS: solo gravedad puntual (sin J2, sin arrastre)
+%    Asi el resultado se puede comparar con la teoria de Hohmann
+%----------------------------------------------------------
+Create ForceModel FM;
+FM.CentralBody = Earth;
+FM.PointMasses = {Earth};
+
+%----------------------------------------------------------
+% 3) PROPAGADOR: integrador numerico que "mueve" el satelite
+%----------------------------------------------------------
+Create Propagator Prop;
+Prop.FM = FM;
+Prop.Type = RungeKutta89;                   % integrador de alta precision
+Prop.InitialStepSize = 60;                  % [s]
+Prop.Accuracy = 1e-12;
+Prop.MinStep = 0.001;
+Prop.MaxStep = 2700;
+
+%----------------------------------------------------------
+% 4) MANIOBRAS IMPULSIVAS (cambio instantaneo de velocidad)
+%    Ejes VNB: Element1 = direccion de la velocidad (prograda)
+%----------------------------------------------------------
+Create ImpulsiveBurn TOI;                   % Transfer Orbit Insertion (1er impulso)
+TOI.CoordinateSystem = Local;
+TOI.Origin = Earth;
+TOI.Axes = VNB;
+
+Create ImpulsiveBurn GOI;                   % Goal Orbit Insertion (2do impulso)
+GOI.CoordinateSystem = Local;
+GOI.Origin = Earth;
+GOI.Axes = VNB;
+
+%----------------------------------------------------------
+% 5) TARGETER: GMAT busca solo los dv que cumplen los objetivos
+%----------------------------------------------------------
+Create DifferentialCorrector DC;
+
+%----------------------------------------------------------
+% 6) VARIABLES para el reporte
+%----------------------------------------------------------
+Create Variable t1 t2 tTransf_min dv1_ms dv2_ms dvTotal_ms;
+
+%----------------------------------------------------------
+% 7) SALIDAS: reporte de texto, grafico de altitud y vista 3D
+%----------------------------------------------------------
+Create ReportFile Reporte;
+Reporte.Filename = 'hohmann_reporte.txt';   % se guarda en GMAT_R2025a\output
+Reporte.WriteHeaders = true;
+
+Create XYPlot GraficoAltitud;
+GraficoAltitud.XVariable = Sat.ElapsedDays;
+GraficoAltitud.YVariables = {Sat.Earth.Altitude};
+
+Create OrbitView Vista3D;
+Vista3D.Add = {Sat, Earth};
+
+%==========================================================
+% SECUENCIA DE LA MISION
+%==========================================================
+BeginMissionSequence;
+
+% Una vuelta en la orbita inicial (solo para verla en el grafico)
+Propagate Prop(Sat) {Sat.ElapsedSecs = 5640};
+
+t1 = Sat.A1ModJulian;                       % instante del 1er impulso [dias]
+
+Target DC {SolveMode = Solve, ExitMode = DiscardAndContinue};
+   % Impulso 1: subir el apogeo hasta 500 km
+   Vary DC(TOI.Element1 = 0.01, {Perturbation = 0.0001, Lower = 0, Upper = 0.1, MaxStep = 0.005});
+   Maneuver TOI(Sat);
+   Propagate Prop(Sat) {Sat.Apoapsis};
+   Achieve DC(Sat.Earth.RMAG = 6878.137, {Tolerance = 0.001});
+
+   % Impulso 2: circularizar en el apogeo
+   Vary DC(GOI.Element1 = 0.01, {Perturbation = 0.0001, Lower = 0, Upper = 0.1, MaxStep = 0.005});
+   Maneuver GOI(Sat);
+   Achieve DC(Sat.Earth.ECC = 0, {Tolerance = 0.00001});
+EndTarget;
+
+t2 = Sat.A1ModJulian;                       % instante del 2do impulso [dias]
+
+% Calculos del reporte (GMAT trabaja en km/s y dias)
+tTransf_min = (t2 - t1) * 1440;
+dv1_ms = TOI.Element1 * 1000;
+dv2_ms = GOI.Element1 * 1000;
+dvTotal_ms = dv1_ms + dv2_ms;
+
+Report Reporte dv1_ms dv2_ms dvTotal_ms tTransf_min Sat.Earth.SMA Sat.Earth.ECC Sat.Earth.Altitude;
+
+% Una vuelta en la orbita final
+Propagate Prop(Sat) {Sat.ElapsedSecs = 5700};

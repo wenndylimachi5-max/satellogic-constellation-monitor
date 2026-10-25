@@ -1,0 +1,2 @@
+dv1_ms                    dv2_ms                    dvTotal_ms                tTransf_min               Sat.Earth.SMA             Sat.Earth.ECC             Sat.Earth.Altitude        
+13.92332123394384         13.8981492111822          27.82147044512604         47.05045800539665         6878.137363146618         5.27744209554621e-08      500.0202333584875         
